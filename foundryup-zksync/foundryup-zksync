@@ -164,11 +164,11 @@ main() {
       say "installed - $(ensure "$bin_path" --version)"
 
       # Check if the default path of the binary is not in FOUNDRY_BIN_DIR
-      which_path="$(command -v "$bin" || true)"
+      which_path="$(command -v "${bin}-zksync" || true)"
       if [ -n "$which_path" ] && [ "$which_path" != "$bin_path" ]; then
         warn ""
         cat 1>&2 <<EOF
-There are multiple binaries with the name '$bin' present in your 'PATH'.
+There are multiple binaries with the name '${bin}-zksync' present in your 'PATH'.
 This may be the result of installing '$bin' using another method,
 like Cargo or other package managers.
 You may need to run 'rm $which_path' or move '$FOUNDRY_BIN_DIR'
