@@ -159,6 +159,7 @@ main() {
     fi
 
     for bin in "${BINS[@]}"; do
+      mv "$FOUNDRY_BIN_DIR/$bin" "$FOUNDRY_BIN_DIR/${bin}-zksync"
       bin_path="$FOUNDRY_BIN_DIR/${bin}-zksync"
 
       # Print installed msg
@@ -213,7 +214,6 @@ EOF
         if [ -f "$try_path" ]; then
           [ -e "$FOUNDRY_BIN_DIR/${bin}-zksync" ] && warn "overwriting existing $bin in $FOUNDRY_BIN_DIR"
           mv -f "$try_path" "$FOUNDRY_BIN_DIR"
-          say "$try_path mvto $FOUNDRY_BIN_DIR"
           mv "$FOUNDRY_BIN_DIR/$bin" "$FOUNDRY_BIN_DIR/${bin}-zksync"
         fi
       done
