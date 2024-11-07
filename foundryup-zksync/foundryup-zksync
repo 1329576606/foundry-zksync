@@ -8,7 +8,7 @@ FOUNDRY_MAN_DIR="$FOUNDRY_DIR/share/man/man1"
 
 FOUNDRYUP_JOBS=""
 
-BINS=(forge-zksync cast-zksync)
+BINS=(forge cast)
 
 export RUSTFLAGS="${RUSTFLAGS:--C target-cpu=native}"
 
@@ -158,7 +158,7 @@ main() {
     fi
 
     for bin in "${BINS[@]}"; do
-      bin_path="$FOUNDRY_BIN_DIR/$bin"
+      bin_path="$FOUNDRY_BIN_DIR/$bin"+"-zksync"
 
       # Print installed msg
       say "installed - $(ensure "$bin_path" --version)"
