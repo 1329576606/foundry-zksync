@@ -75,6 +75,7 @@ main() {
       # Remove prior installations if they exist
       rm -f "$FOUNDRY_BIN_DIR/${bin}-zksync"
       # Symlink from local repo binaries to bin dir
+      say "Symlink from local repo binaries to bin dir"
       ensure ln -s "$PWD/target/release/$bin" "$FOUNDRY_BIN_DIR/${bin}-zksync"
     done
 
