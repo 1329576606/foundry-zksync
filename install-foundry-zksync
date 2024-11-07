@@ -23,7 +23,7 @@ SHELL_CONFIG_FILE=$(sed -n "s/.*Run 'source \(.*\)'.*/\1/p" install.log)
 if [ -n "$SHELL_CONFIG_FILE" ]; then
     if [ -n "${CI}" ]; then
         # Add manually to $PATH in CI mode as GHA does not work with `.`
-        FOUNDRY_BIN_DIR="${XDG_CONFIG_HOME:-$HOME}/.foundry/bin"
+        FOUNDRY_BIN_DIR="${XDG_CONFIG_HOME:-$HOME}/.foundry-zksync/bin"
         echo "adding '${FOUNDRY_BIN_DIR}' to PATH and GITHUB_PATH"
         export PATH="$PATH:$FOUNDRY_BIN_DIR"
         echo "${FOUNDRY_BIN_DIR}" >> $GITHUB_PATH
