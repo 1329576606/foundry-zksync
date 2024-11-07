@@ -73,9 +73,9 @@ main() {
 
     for bin in "${BINS[@]}"; do
       # Remove prior installations if they exist
-      rm -f "$FOUNDRY_BIN_DIR/$bin"
+      rm -f "$FOUNDRY_BIN_DIR/${bin}-zksync"
       # Symlink from local repo binaries to bin dir
-      ensure ln -s "$PWD/target/release/$bin" "$FOUNDRY_BIN_DIR/$bin"
+      ensure ln -s "$PWD/target/release/$bin" "$FOUNDRY_BIN_DIR/${bin}-zksync"
     done
 
     say "done"
@@ -158,7 +158,7 @@ main() {
     fi
 
     for bin in "${BINS[@]}"; do
-      bin_path="$FOUNDRY_BIN_DIR/$bin"+"-zksync"
+      bin_path="$FOUNDRY_BIN_DIR/${bin}-zksync"
 
       # Print installed msg
       say "installed - $(ensure "$bin_path" --version)"
@@ -210,7 +210,7 @@ EOF
     for bin in "${BINS[@]}"; do
       for try_path in target/release/$bin target/release/$bin.exe; do
         if [ -f "$try_path" ]; then
-          [ -e "$FOUNDRY_BIN_DIR/$bin" ] && warn "overwriting existing $bin in $FOUNDRY_BIN_DIR"
+          [ -e "$FOUNDRY_BIN_DIR/${bin}-zksync" ] && warn "overwriting existing $bin in $FOUNDRY_BIN_DIR"
           mv -f "$try_path" "$FOUNDRY_BIN_DIR"
         fi
       done
@@ -219,7 +219,7 @@ EOF
     # If help2man is installed, use it to add Foundry man pages.
     if check_cmd help2man; then
       for bin in "${BINS[@]}"; do
-        help2man -N "$FOUNDRY_BIN_DIR/$bin" > "$FOUNDRY_MAN_DIR/$bin.1"
+        help2man -N "$FOUNDRY_BIN_DIR/${bin}-zksync" > "$FOUNDRY_MAN_DIR/$bin.1"
       done
     fi
 
