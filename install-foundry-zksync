@@ -3,8 +3,8 @@
 set -e
 
 # URLs to the raw files on GitHub
-INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/matter-labs/foundry-zksync/main/foundryup-zksync/install"
-FOUNDRYUP_ZKSYNC_URL="https://raw.githubusercontent.com/matter-labs/foundry-zksync/main/foundryup-zksync/foundryup-zksync"
+INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/1329576606/foundry-zksync/main/foundryup-zksync/install"
+FOUNDRYUP_ZKSYNC_URL="https://raw.githubusercontent.com/1329576606/foundry-zksync/main/foundryup-zksync/foundryup-zksync"
 
 # Download the install script
 echo "Downloading the install script..."
